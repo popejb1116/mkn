@@ -9,7 +9,7 @@ import logo from '../../images/logo-styled.png'
 //TODO: CROP LOGO IMAGE TO SQUARE, REMOVE img { padding-left: 1rem; }
 export const BannerWrapper = styled.div`
    .hero{
-      background-color: ${props => props.theme.banner};
+      background-color: ${props => props.theme.primary};
       padding: 0 3rem;
    }
    .container{
