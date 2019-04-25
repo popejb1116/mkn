@@ -18,7 +18,7 @@ function App() {
 
          <BrowserRouter>
             <BulmaNavbar />
-            <Route path="/home" component={Home} />
+            <Route exact path="/" component={Home} />
             <Route path="/litigation" component={Litigation} />
             <Route path="/contracts" component={Contracts} />
             <Route path="/hrconsulting" component={HRConsulting} />

@@ -65,7 +65,7 @@ class BulmaNavbar extends Component {
                      
                      <Navbar.Container>
                         <Navbar.Item>
-                           <Link to="/home" id="rr-link">Home</Link>
+                           <Link to="/" id="rr-link">Home</Link>
                         </Navbar.Item>                  
                         <Navbar.Item >
                            <Link to="/litigation" id="rr-link">Litigation</Link>
