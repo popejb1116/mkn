@@ -1,19 +1,8 @@
 import React from 'react'
 import { Container, Heading } from 'react-bulma-components/full'
-import styled, { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import { theme } from '../../theme/Theme'
-
-const ContainerWrapper = styled.div`
-   background-color: ${props => props.theme.accent};
-
-   .container{
-      padding: 2rem;
-   }
-
-   .title, .subtitle{
-      color: white;
-   }
-`
+import { ContainerWrapper } from '../../theme/StyledWrappers'
 
 const Home = () => {
    return (

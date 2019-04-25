@@ -8,7 +8,7 @@ import { theme } from '../../theme/Theme'
 const NavWrapper = styled.div`
    
    .navbar{
-      background-color: ${props => props.theme.primary};
+      background-color: ${props => props.theme.banner};
       padding: 0 3rem;
    }
    .navbar-burger{
@@ -18,14 +18,14 @@ const NavWrapper = styled.div`
       }
    }
    .navbar-menu{
-      background-color: ${props => props.theme.primary};
+      background-color: ${props => props.theme.banner};
       justify-content: center;
    }
    .navbar-start{
       margin: 0;
    }
    .navbar-item:hover{
-      background-color: ${props => props.theme.accent}
+      background-color: ${props => props.theme.primary}
    }
    #rr-link{
       color: white;

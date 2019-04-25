@@ -1,5 +1,5 @@
 export const theme = {
-   primary: "hsl(224, 21%, 21%)",
-   accent: "hsl(202, 38%, 57%)",
-   bg: "hsl(202, 13%, 57%)"
+   banner: "hsl(224, 21%, 21%)",
+   primary: "hsl(202, 38%, 57%)",
+   accent: "hsl(202, 13%, 57%)"   
 }
