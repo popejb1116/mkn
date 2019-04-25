@@ -3,7 +3,6 @@ import { Hero, Container, Heading, Image } from 'react-bulma-components/full'
 import styled from 'styled-components'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../../theme/Theme'
-//import { BannerWrapper } from '../../theme/StyledWrappers'
 import logo from '../../images/logo-styled.png'
 
 export const BannerWrapper = styled.div`
