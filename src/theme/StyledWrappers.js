@@ -1,3 +1,14 @@
-//import styled from 'styled-components'
+import styled from 'styled-components'
 
-//NOT ACTUALLY USED YET
+// WRAPS PRIMARY CONTAINER USED IN ALL ROUTES
+export const ContainerWrapper = styled.div`
+   background-color: ${props => props.theme.accent};
+
+   .container{
+      padding: 2.5rem;
+   }
+
+   .title, .subtitle{
+      color: white;
+   }
+`
