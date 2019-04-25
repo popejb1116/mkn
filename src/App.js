@@ -1,10 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+//import logo from './logo.svg'
+import './App.css'
+import { Hero, Container, Heading } from 'react-bulma-components/full'
+
+import { theme } from './theme/Theme'
+import { ThemeProvider } from 'styled-components'
+import { TestWrapper } from './theme/StyledWrappers'
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
+      <TestWrapper>
+         <Hero id="hero">
+            <Hero.Body>
+               <Container>
+               <Heading>Bulma and Styled Comps Installed</Heading>
+               <Heading subtitle size={3}>
+                  We were styled with styled components
+               </Heading>
+               </Container>
+            </Hero.Body>
+         </Hero>
+      </TestWrapper>
+    </ThemeProvider>
+  )
+}
+
+export default App
+ /*
+<div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -20,7 +44,4 @@ function App() {
         </a>
       </header>
     </div>
-  );
-}
-
-export default App;
+ */
