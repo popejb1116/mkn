@@ -9,6 +9,7 @@ import Contracts from './components/content/Contracts'
 import HRConsulting from './components/content/HRConsulting'
 import Research from './components/content/Research'
 import AttorneyProfile from './components/content/AttorneyProfile'
+import Footer from './components/common/Footer'
 
 function App() {
    return (
@@ -24,7 +25,9 @@ function App() {
             <Route path="/hrconsulting" component={HRConsulting} />
             <Route path="/research" component={Research} />
             <Route path="/attorneyprofile" component={AttorneyProfile} />
-         </BrowserRouter>     
+         </BrowserRouter>   
+
+         <Footer />  
           
       </div>
       
