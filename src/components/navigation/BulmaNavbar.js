@@ -10,6 +10,9 @@ const NavWrapper = styled.div`
    .navbar{
       background-color: ${props => props.theme.primary};
       padding: 0 3rem;
+      border-top-style: solid;
+      border-top-width: 5px;
+      border-color: ${props => props.theme.accent};
    }
    .navbar-burger{
       color: white;
@@ -64,23 +67,23 @@ class BulmaNavbar extends Component {
                   <Navbar.Menu >
                      
                      <Navbar.Container>
-                        <Navbar.Item>
-                           <Link to="/" id="rr-link">Home</Link>
+                        <Navbar.Item renderAs="div">
+                           <Link to="/" id="rr-link" onClick={this.handleBurger}>Home</Link>
                         </Navbar.Item>                  
-                        <Navbar.Item >
-                           <Link to="/litigation" id="rr-link">Litigation</Link>
+                        <Navbar.Item renderAs="div">
+                           <Link to="/litigation" id="rr-link" onClick={this.handleBurger}>Litigation</Link>
                         </Navbar.Item>
-                        <Navbar.Item>
-                           <Link to="/contracts" id="rr-link">Contracts</Link>
+                        <Navbar.Item renderAs="div">
+                           <Link to="/contracts" id="rr-link" onClick={this.handleBurger}>Contracts</Link>
                         </Navbar.Item>                  
-                        <Navbar.Item >
-                           <Link to="/hrconsulting" id="rr-link">HR Consulting</Link>
+                        <Navbar.Item renderAs="div">
+                           <Link to="/hrconsulting" id="rr-link" onClick={this.handleBurger}>HR Consulting</Link>
                         </Navbar.Item>
-                        <Navbar.Item >
-                           <Link to="/research" id="rr-link">Research</Link>
+                        <Navbar.Item renderAs="div">
+                           <Link to="/research" id="rr-link" onClick={this.handleBurger}>Research</Link>
                         </Navbar.Item>
-                        <Navbar.Item >
-                           <Link to="/attorneyprofile" id="rr-link">Attorney Profile</Link>
+                        <Navbar.Item renderAs="div">
+                           <Link to="/attorneyprofile" id="rr-link" onClick={this.handleBurger}>Attorney Profile</Link>
                         </Navbar.Item>
                      </Navbar.Container>
          
