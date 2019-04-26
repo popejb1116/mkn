@@ -39,10 +39,6 @@ const Banner = () => {
                <Hero.Body>
                   <Container>
                      <Image src={logo} />
-                     <br/>
-                     <Heading subtitle size={4}>
-                        Licensed in NC, SC and MO
-                     </Heading>
                   </Container>
                </Hero.Body>
             </Hero>

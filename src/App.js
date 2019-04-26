@@ -12,7 +12,7 @@ import AttorneyProfile from './components/content/AttorneyProfile'
 
 function App() {
    return (
-      <Fragment>
+      <div>
 
          <Banner />
 
@@ -26,7 +26,7 @@ function App() {
             <Route path="/attorneyprofile" component={AttorneyProfile} />
          </BrowserRouter>     
           
-      </Fragment>
+      </div>
       
    )
 }
