@@ -39,8 +39,8 @@ const Footer = () => {
    return (
       <ThemeProvider theme={theme}>
          <FooterWrapper>            
-            <Heading size={2}>Litigation. Contracts. HR Consulting.</Heading>            
-            <Heading size={6}>1927 S. TRYON ST. SUITE 106, CHARLOTTE, NC 28203</Heading>
+            <Heading size={3}>Litigation. Contracts. HR Consulting.</Heading>            
+            <Heading size={5}>1927 S. TRYON ST. SUITE 106, CHARLOTTE, NC 28203</Heading>
             <Heading size={6}>OFFICE: 704.280.8529 FAX: 980.939.6389</Heading>
             <Heading size={6}>INFO@MKNEMPLOYMENTLAW.COM</Heading>
             <Image src={logo} />
