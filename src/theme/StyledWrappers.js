@@ -25,16 +25,3 @@ export const CardWrapper = styled.div`
       color: white;
    }
 `
-
-// WRAPS CONTAINER USED IN ALL ROUTES NOT CONTAINING CARD IMAGES - LIST: /research
-export const ResearchWrapper = styled.div`
-   background-color: ${props => props.theme.accent};
-
-   .container{
-      padding: 2rem 4rem;
-   }
-
-   .title, .subtitle{
-      color: white;
-   }
-`
