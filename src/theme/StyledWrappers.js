@@ -31,7 +31,7 @@ export const ResearchWrapper = styled.div`
    background-color: ${props => props.theme.accent};
 
    .container{
-      padding: 2.5rem;
+      padding: 2rem 4rem;
    }
 
    .title, .subtitle{
