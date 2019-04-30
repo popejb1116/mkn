@@ -15,6 +15,7 @@ const FooterWrapper = styled.div`
    border-top-width: 5px;
    border-color: white;
    text-align: center;
+   width: 100%;
 
    .title{      
       color: white;

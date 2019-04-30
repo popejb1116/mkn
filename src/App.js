@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import './App.css'
 import Banner from './components/common/Banner'
 import { BrowserRouter, Route } from 'react-router-dom'
@@ -10,13 +10,32 @@ import HRConsulting from './components/content/HRConsulting'
 import Research from './components/content/Research'
 import AttorneyProfile from './components/content/AttorneyProfile'
 import Footer from './components/common/Footer'
+import styled from 'styled-components'
+
+const AppWrapper = styled.div`   
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: flex-start;
+   min-height: ${props => props.dynamicHeight+'px'};
+
+   .shifter{
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: flex-end;
+   }
+`
 
 function App() {
+
+   // GET THE DEVICE DIMENSIONS IN PX AND PASS TO APP WRAPPER TO ENSURE FOOTER ALWAYS RENDERS AT VERY BOTTOM OF SCREEN
+   const dynamicHeight = window.innerHeight
+
    return (
-      <div>
+      <AppWrapper dynamicHeight={dynamicHeight} >
 
          <Banner />
-
+         
          <BrowserRouter>
             <BulmaNavbar />
             <Route exact path="/" component={Home} />
@@ -25,11 +44,13 @@ function App() {
             <Route path="/hrconsulting" component={HRConsulting} />
             <Route path="/research" component={Research} />
             <Route path="/attorneyprofile" component={AttorneyProfile} />
-         </BrowserRouter>   
+         </BrowserRouter>
 
-         <Footer />  
+         <div className="shifter">
+            <Footer />  
+         </div>
           
-      </div>
+      </AppWrapper>
       
    )
 }
