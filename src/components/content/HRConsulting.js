@@ -16,7 +16,6 @@ const HRConsulting = () => {
                   <Heading size={3}>
                      HR Consulting
                   </Heading>
-                  <br/>
 
                   <TextInfoContext.Consumer>{
                      context => (

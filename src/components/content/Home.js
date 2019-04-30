@@ -18,7 +18,6 @@ const Home = () => {
                   <Heading size={3}>
                      Employment Law Solutions
                   </Heading>
-                  <br/>
 
                   <TextInfoContext.Consumer>{
                      context => (

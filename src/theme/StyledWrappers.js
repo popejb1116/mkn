@@ -21,7 +21,14 @@ export const CardWrapper = styled.div`
       border-top-right-radius: 10px;
    }
 
-   .title, .subtitle{
+   .title{
+      margin-bottom: 2.5rem;
       color: white;
+      text-align: center;
+   }
+
+   .subtitle{
+      color: white;
+      font-size: 1rem;
    }
 `

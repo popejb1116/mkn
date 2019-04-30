@@ -17,7 +17,6 @@ const Litigation = () => {
                   <Heading size={3}>
                   Litigation
                   </Heading>
-                  <br/>
                   
                   <TextInfoContext.Consumer>{
                      context => (

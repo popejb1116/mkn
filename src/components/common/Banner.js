@@ -12,6 +12,9 @@ export const BannerWrapper = styled.div`
       background-color: ${props => props.theme.primary};
       padding: 0 3rem;
    }
+   .hero-body{
+      padding: 2rem 1.5rem;
+   }
    .container{
       display: flex;
       flex-flow: column nowrap;

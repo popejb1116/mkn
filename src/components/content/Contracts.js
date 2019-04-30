@@ -16,7 +16,7 @@ const Contracts = () => {
                   <Heading size={3}>
                      Employment Contracts
                   </Heading>
-                  <br/>
+                  
 
                   <TextInfoContext.Consumer>{
                      context => (

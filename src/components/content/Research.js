@@ -12,7 +12,6 @@ const Research = () => {
             <Card>
                <Card.Content>
                   <Heading size={3}>Research</Heading>
-                  <br/>
                   
                   <TextInfoContext.Consumer>{
                      context => (
