@@ -16,6 +16,10 @@ export const CardWrapper = styled.div`
       border-radius: 10px;
    }
 
+   .card-image{
+      
+   }
+
    img{
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;

@@ -15,7 +15,7 @@ const Litigation = () => {
                <Card.Image src={image} />                  
                <Card.Content>
                   <Heading size={3}>
-                  Litigation
+                     Litigation
                   </Heading>
                   
                   <TextInfoContext.Consumer>{
