@@ -5,10 +5,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { TextInfoProvider } from './context/TextInfoContext'
+import { PlaceholderProvider } from './context/PlaceholderContext'
 
 ReactDOM.render(
 <TextInfoProvider>
+<PlaceholderProvider>
    <App />
+</PlaceholderProvider>
 </TextInfoProvider>
 , document.getElementById('root'));
 
