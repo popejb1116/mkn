@@ -5,14 +5,16 @@ const PlaceholderContext = React.createContext()
 class PlaceholderProvider extends Component {
 
    state = {
-      home_ligitation: 1
+      home_ligitation: 1,
+      contracts: 1,
+      hr_consulting: 1,
+      ee_law: 1
    }
 
-   handleOpacityChange = () => {
-      console.log('hOC')
+   handleOpacityChange = (e, imgRef) => {
       
       this.setState({
-         home_ligitation: 0
+         [imgRef]: 0
       })
    }
 
@@ -20,7 +22,7 @@ class PlaceholderProvider extends Component {
       return (
          <PlaceholderContext.Provider value={{
             placeholderOpacities: this.state,
-            handleOpacityChange: this.handleOpacityChange
+            handleOpacityChange: (e, imgRef) => this.handleOpacityChange(e, imgRef)
          }}>
             {this.props.children}
          </PlaceholderContext.Provider>

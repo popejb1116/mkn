@@ -1,43 +1,42 @@
-import React,{ Fragment } from 'react'
-import { Card, Heading} from 'react-bulma-components/full'
-import { ThemeProvider } from 'styled-components'
-import { theme } from '../../theme/Theme'
+import React from 'react'
 import image from '../../images/contracts.jpg'
-import { CardWrapper } from '../../theme/StyledWrappers'
+import placeholder from '../../images/placeholders/contracts_placeholder.jpg'
+import { PlaceholderContext } from '../../context/PlaceholderContext'
 import { TextInfoContext } from '../../context/TextInfoContext'
+import { Layout, Card, BlurUpContainer, PlaceholderImg, CardContent, CardTitle, CardText } from './_ContentStyledComponents'
 
 const Contracts = () => {
    return (
-      <ThemeProvider theme={theme}>
-         <CardWrapper>            
-            <Card>
-               <Card.Image src={image} />                  
-               <Card.Content>
-                  <Heading size={3}>
-                     Employment Contracts
-                  </Heading>
-                  
+      <Layout>
+         <Card>
 
-                  <TextInfoContext.Consumer>{
-                     context => (
-                        <Fragment>
-                           <Heading subtitle renderAs="p">{context.state.contracts_paragraphs[0]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.contracts_paragraphs[1]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.contracts_paragraphs[2]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.contracts_paragraphs[3]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.contracts_paragraphs[4]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.contracts_paragraphs[5]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.contracts_paragraphs[6]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.contracts_paragraphs[7]}</Heading>
-                        </Fragment>
-                     )
-                  }                     
-                  </TextInfoContext.Consumer>
+            <PlaceholderContext.Consumer>
+               { context => (
+                  <BlurUpContainer>
+                     <img
+                        src={image}
+                        onLoad={ e => context.handleOpacityChange(e, "contracts") }
+                     />
+                     <PlaceholderImg 
+                        src={placeholder}
+                        opacity={context.placeholderOpacities.contracts}
+                     />
+                  </BlurUpContainer>
+               )}                  
+            </PlaceholderContext.Consumer>
+            
+            <CardContent>
+               <CardTitle>Contracts</CardTitle>
+               <TextInfoContext.Consumer>{
+                  context => (
+                     context.paragraphs.contracts.map( paragraph => <CardText>{ paragraph }</CardText> )
+                  )
+               }                     
+               </TextInfoContext.Consumer>                  
+            </CardContent>
 
-               </Card.Content>
-            </Card>            
-         </CardWrapper>
-      </ThemeProvider>
+      </Card>
+   </Layout>
    )
 }
 
