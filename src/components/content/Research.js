@@ -8,7 +8,7 @@ const Research = () => {
          <Card>
             
             <CardContent>
-               <CardTitle>Research</CardTitle>
+               <CardTitle>Special Research Projects</CardTitle>
                <TextInfoContext.Consumer>{
                   context => (
                      context.paragraphs.research.map( paragraph => <CardText>{ paragraph }</CardText> )
