@@ -5,11 +5,18 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { TextInfoProvider } from './context/TextInfoContext'
+import { PlaceholderProvider } from './context/PlaceholderContext'
+import { theme } from './theme/Theme'
+import { ThemeProvider } from 'styled-components'
 
 ReactDOM.render(
+<ThemeProvider theme={theme}>
 <TextInfoProvider>
+<PlaceholderProvider>
    <App />
+</PlaceholderProvider>
 </TextInfoProvider>
+</ThemeProvider>
 , document.getElementById('root'));
 
 // ReactDOM.render(<App />, document.getElementById('root'));

@@ -1,6 +1,5 @@
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
-import { theme } from '../../theme/Theme'
+import styled from 'styled-components'
 import { Heading, Image } from 'react-bulma-components/full'
 import logo from '../../images/logo-styled.png'
 
@@ -38,15 +37,13 @@ const FooterWrapper = styled.div`
 
 const Footer = () => {
    return (
-      <ThemeProvider theme={theme}>
-         <FooterWrapper>            
-            <Heading size={3}>Litigation. Contracts. HR Consulting.</Heading>            
-            <Heading size={5}>1927 S. TRYON ST. SUITE 106, CHARLOTTE, NC 28203</Heading>
-            <Heading size={6}>OFFICE: 704.280.8529 FAX: 980.939.6389</Heading>
-            <Heading size={6}>INFO@MKNEMPLOYMENTLAW.COM</Heading>
-            <Image src={logo} />
-         </FooterWrapper>
-      </ThemeProvider>      
+      <FooterWrapper>            
+         <Heading size={3}>Litigation. Contracts. HR Consulting.</Heading>            
+         <Heading size={5}>1927 S. TRYON ST. SUITE 106, CHARLOTTE, NC 28203</Heading>
+         <Heading size={6}>OFFICE: 704.280.8529 FAX: 980.939.6389</Heading>
+         <Heading size={6}>INFO@MKNEMPLOYMENTLAW.COM</Heading>
+         <Image src={logo} />
+      </FooterWrapper>
    )
 }
 

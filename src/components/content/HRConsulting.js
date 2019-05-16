@@ -1,41 +1,42 @@
-import React,{ Fragment } from 'react'
-import { Card, Heading} from 'react-bulma-components/full'
-import { ThemeProvider } from 'styled-components'
-import { theme } from '../../theme/Theme'
+import React from 'react'
 import image from '../../images/hr-consulting.jpg'
-import { CardWrapper } from '../../theme/StyledWrappers'
+import placeholder from '../../images/placeholders/hr-consulting_placeholder.jpg'
+import { PlaceholderContext } from '../../context/PlaceholderContext'
 import { TextInfoContext } from '../../context/TextInfoContext'
+import { Layout, Card, BlurUpContainer, PlaceholderImg, CardContent, CardTitle, CardText } from './_ContentStyledComponents'
 
 const HRConsulting = () => {
    return (
-      <ThemeProvider theme={theme}>
-         <CardWrapper>            
-            <Card>
-               <Card.Image src={image} />                  
-               <Card.Content>
-                  <Heading size={3}>
-                     HR Consulting
-                  </Heading>
+      <Layout>
+         <Card>
 
-                  <TextInfoContext.Consumer>{
-                     context => (
-                        <Fragment>
-                           <Heading subtitle renderAs="p">{context.state.hr_consulting_paragraphs[0]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.hr_consulting_paragraphs[1]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.hr_consulting_paragraphs[2]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.hr_consulting_paragraphs[3]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.hr_consulting_paragraphs[4]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.hr_consulting_paragraphs[5]}</Heading>
-                           <Heading subtitle renderAs="p">{context.state.hr_consulting_paragraphs[6]}</Heading>
-                        </Fragment>
-                     )
-                  }                     
-                  </TextInfoContext.Consumer>
+            <PlaceholderContext.Consumer>
+               { context => (
+                  <BlurUpContainer>
+                     <img
+                        src={image}
+                        onLoad={ e => context.handleOpacityChange(e, "hr_consulting") }
+                     />
+                     <PlaceholderImg 
+                        opacity={context.placeholderOpacities.hr_consulting}
+                        src={placeholder}
+                     />
+                  </BlurUpContainer>
+               )}                  
+            </PlaceholderContext.Consumer>
+            
+            <CardContent>
+               <CardTitle>HR Consulting</CardTitle>
+               <TextInfoContext.Consumer>{
+                  context => (
+                     context.paragraphs.hr_consulting.map( paragraph => <CardText>{ paragraph }</CardText> )
+                  )
+               }                     
+               </TextInfoContext.Consumer>                  
+            </CardContent>
 
-               </Card.Content>
-            </Card>            
-         </CardWrapper>
-      </ThemeProvider>
+      </Card>
+   </Layout>
    )
 }
 
