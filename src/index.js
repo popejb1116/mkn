@@ -4,7 +4,22 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { TextInfoProvider } from './context/TextInfoContext'
+import { PlaceholderProvider } from './context/PlaceholderContext'
+import { theme } from './theme/Theme'
+import { ThemeProvider } from 'styled-components'
+
+ReactDOM.render(
+<ThemeProvider theme={theme}>
+<TextInfoProvider>
+<PlaceholderProvider>
+   <App />
+</PlaceholderProvider>
+</TextInfoProvider>
+</ThemeProvider>
+, document.getElementById('root'));
+
+// ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
