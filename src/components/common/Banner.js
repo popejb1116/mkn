@@ -31,22 +31,19 @@ export const BannerWrapper = styled.div`
       align-self: center;
       text-align: center;
    }
-   
 `
 
 const Banner = () => {
    return (
-      <ThemeProvider theme={theme}>
-         <BannerWrapper>
-            <Hero>
-               <Hero.Body>
-                  <Container>
-                     <Image src={logo} />
-                  </Container>
-               </Hero.Body>
-            </Hero>
-         </BannerWrapper>
-      </ThemeProvider>
+      <BannerWrapper>
+         <Hero>
+            <Hero.Body>
+               <Container>
+                  <Image src={logo} />
+               </Container>
+            </Hero.Body>
+         </Hero>
+      </BannerWrapper>
    )
 }
 

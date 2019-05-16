@@ -9,7 +9,7 @@ import { TextInfoContext } from '../../context/TextInfoContext'
 
 const Litigation = () => {
    return (
-      <ThemeProvider theme={theme}>
+      
          <CardWrapper>            
             <Card>
                <Card.Image src={image} />                  
@@ -30,7 +30,7 @@ const Litigation = () => {
                </Card.Content>
             </Card>            
          </CardWrapper>
-      </ThemeProvider>
+      
    )
 }
 
