@@ -64,22 +64,17 @@ const MyFormButton = styled.button`
    letter-spacing: 0.25rem;
 
    &:hover{
-      background-color: white;
+      background-color: whitesmoke;
       color: ${props => props.theme.accent}
    }
    &:focus{
       border: solid 3px whitesmoke;
    }
+   &:disabled{
+      background-color: grey;
+   }
    
 `
-
-// const MyForm = styled.form`
-//    display: flex;
-//    flex-flow: column nowrap;
-//    justify-contents: space-around;
-//    align-items: center;
-//    min-height: 400px;
-// `
 
 class BusinessForm extends Component {
    render() {
@@ -116,7 +111,7 @@ class BusinessForm extends Component {
                         setTimeout(() => {
                            alert(JSON.stringify(values, null, 2));
                            setSubmitting(false);
-                        }, 400);
+                        }, 5000);
                      }}
                   >
                      {({ isSubmitting }) => (
@@ -203,6 +198,7 @@ class BusinessForm extends Component {
                               <MyFormButton type="submit" disabled={isSubmitting}>
                                  SUBMIT
                               </MyFormButton>
+                        
                            </Form>
                         </FormWrapper>
                      )}
