@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Layout, Card, CardContent, CardTitle, CardText } from './_ContentStyledComponents'
-import { Formik, Form, Field, ErrorMessage } from 'formik';// 38.2
+import { Formik, Form, Field, ErrorMessage } from 'formik'// 38.2
+import * as Yup from 'yup'
 import styled from 'styled-components'
 
 // JUST FOR NOW
@@ -17,6 +18,7 @@ const FormWrapper = styled.div`
 const InputAndErrorBlock = styled.div`
    
    min-height: 5rem;
+   max-width: 25rem;
    
    input, select{
       background-color: transparent;
@@ -92,26 +94,30 @@ class BusinessForm extends Component {
                         phone: '',
                         email: '',
                         address: '',
-                        businessType: null,
                         employeeCount: '',
-                        assistanceType: ''
+                        assistanceSought: ''
                      }}
-                     validate={values => {
-                        let errors = {};
-                        if (!values.email) {
-                           errors.email = 'Required';
-                        } else if (
-                           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                        ) {
-                           errors.email = 'Invalid email address';
-                        }
-                        return errors;
-                     }}
+                     validationSchema = { Yup.object().shape({
+                        phone: Yup.string()
+                           .min(11, "Incorrect number of characters")
+                           .matches(/\([0-9]{3}\) [0-9]{3}-[0-9]{4}/, "Incorrect Format"),
+                        email: Yup.string()
+                           .email()
+                           .required("Required"),
+                        employeeCount: Yup.number()
+                           .moreThan(0, "Not enough")
+                           .lessThan(5001, "Max count exceeded, please use 5000")
+                     })}
+                    
                      onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
-                           alert(JSON.stringify(values, null, 2));
-                           setSubmitting(false);
-                        }, 5000);
+                           alert(
+                              `Fake Submit Complete, Your Entered Values -
+                              ${JSON.stringify(values, null, 2)}
+                              `
+                           )
+                           setSubmitting(false)
+                        }, 2000)
                      }}
                   >
                      {({ isSubmitting }) => (
@@ -140,7 +146,7 @@ class BusinessForm extends Component {
                                  <Field 
                                     type="text" 
                                     name="phone" 
-                                    placeholder="Phone Number"
+                                    placeholder="Phone Number Ex. (124) 456-789"
                                  />
                                  <ErrorMessage id="formik-error-message" name="phone" component="div" />
                               </InputAndErrorBlock>
@@ -173,24 +179,24 @@ class BusinessForm extends Component {
                               </InputAndErrorBlock>
 
                               <InputAndErrorBlock>
-                                 <Field component="select" name="businessType">
+                                 <Field component="select" name="assistanceSought">
                                     <option value="" disabled selected>Select your option</option>
-                                    <option value="option1">Request For Initial Fee On-Site Consulation</option>
-                                    <option value="option2">General Employment Law Compliance Inquiry</option>
-                                    <option value="option3">Employment Contract-Drafting</option>
-                                    <option value="option4">Employment Contract-Review Existing</option>
-                                    <option value="option5">Employee Benefits Inquiry</option>
-                                    <option value="option6">Non-Compete Agreement</option>
-                                    <option value="option7">Non-Solicitation Agreement</option>
-                                    <option value="option8">Proposed Release/Severance Agreement</option>
-                                    <option value="option9">Termination Review</option>
-                                    <option value="option10">EEOC Charge Filed</option>
-                                    <option value="option11">DOL Investigation Inquiry</option>
-                                    <option value="option12">DHS/ICE Investiagion/Inquiry</option>
-                                    <option value="option13">NC State Litigation Filed</option>
-                                    <option value="option14">SC State Litigation Filed</option>
-                                    <option value="option15">Federal Litigation Filed</option>
-                                    <option value="option16">Other</option>
+                                    <option value="requestForInitial">Request For Initial Fee On-Site Consulation</option>
+                                    <option value="generalEmploymentLaw">General Employment Law Compliance Inquiry</option>
+                                    <option value="employmentContractDrafting">Employment Contract-Drafting</option>
+                                    <option value="employmentContractReview">Employment Contract-Review Existing</option>
+                                    <option value="employeeBenefitsInquiry">Employee Benefits Inquiry</option>
+                                    <option value="nonCompeteAgreement">Non-Compete Agreement</option>
+                                    <option value="nonSolicitationAgreement">Non-Solicitation Agreement</option>
+                                    <option value="proposedReleaseSeverance">Proposed Release/Severance Agreement</option>
+                                    <option value="terminationReview">Termination Review</option>
+                                    <option value="eeo">EEOC Charge Filed</option>
+                                    <option value="dol">DOL Investigation Inquiry</option>
+                                    <option value="dhs">DHS/ICE Investiagion/Inquiry</option>
+                                    <option value="ncs">NC State Litigation Filed</option>
+                                    <option value="scs">SC State Litigation Filed</option>
+                                    <option value="federalLitigationFiled">Federal Litigation Filed</option>
+                                    <option value="other">Other</option>
                                  </Field>
                                  <ErrorMessage id="formik-error-message" name="businessType" component="div" />
                               </InputAndErrorBlock>
