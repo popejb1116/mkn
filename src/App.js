@@ -40,7 +40,7 @@ function App() {
 
          <Banner />
          
-         <BrowserRouter >
+         <BrowserRouter>
             <ScrollToTop>
                <BulmaNavbar />
                <Route exact path="/" component={Home} />
