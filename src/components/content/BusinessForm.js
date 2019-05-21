@@ -16,14 +16,16 @@ const FormWrapper = styled.div`
 `
 
 const MyFieldAndErrorContainer = styled.div`
-   
+   display: flex;
+   flex-flow: column nowrap;
+   align-items: center;
    min-height: 5rem;
-   max-width: 25rem;
-   
+   width: 100%;
+
    input, select{
       background-color: transparent;
       color: whitesmoke;
-      width: 25rem;
+      width: 90%;
       height: 3.25rem;
       padding-left: 0.5rem;
       border: solid 2px whitesmoke;
@@ -73,7 +75,7 @@ const MyFormButton = styled.button`
       border: solid 3px whitesmoke;
    }
    &:disabled{
-      background-color: grey;
+      background-color: ${props => props.theme.neutral};
    }
    
 `
@@ -125,7 +127,7 @@ class BusinessForm extends Component {
                         <FormWrapper>
                            <Form>
 
-                              <MyFieldAndErrorContainer>
+                              <MyFieldAndErrorContainer id="myFieldAndErrorContainer">
                                  <Field 
                                     type="text" 
                                     name="companyName" 
@@ -179,7 +181,7 @@ class BusinessForm extends Component {
                                  <ErrorMessage id="formik-error-message" name="employeeCount" component="div" />
                               </MyFieldAndErrorContainer>
 
-                              <MyFieldAndErrorContainer>
+                              <MyFieldAndErrorContainer id="myFieldAndErrorContainer">
                                  <Field component="select" name="assistanceSought">
                                     <option value="" disabled defaultValue>Select your option</option>
                                     <option value="requestForInitial">Request For Initial Fee On-Site Consulation</option>
