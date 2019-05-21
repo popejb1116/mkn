@@ -53,7 +53,7 @@ export const CardTitle = styled.div`
 `
 
 export const CardText = styled.p`
-   color: white;
+   color: whitesmoke;
    text-align: left;
    font-size: 1rem;
    line-height: 1.25rem;

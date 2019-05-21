@@ -15,7 +15,7 @@ const FormWrapper = styled.div`
    }
 `
 
-const InputAndErrorBlock = styled.div`
+const MyFieldAndErrorContainer = styled.div`
    
    min-height: 5rem;
    max-width: 25rem;
@@ -105,8 +105,8 @@ class BusinessForm extends Component {
                            .email()
                            .required("Required"),
                         employeeCount: Yup.number()
-                           .moreThan(0, "Not enough")
-                           .lessThan(5001, "Max count exceeded, please use 5000")
+                           .moreThan(0, "Minimum count not reached")
+                           .lessThan(5001, "Maximum count exceeded, please use 5000")
                      })}
                     
                      onSubmit={(values, { setSubmitting }) => {
@@ -121,66 +121,67 @@ class BusinessForm extends Component {
                      }}
                   >
                      {({ isSubmitting }) => (
+                        
                         <FormWrapper>
                            <Form>
 
-                              <InputAndErrorBlock>
+                              <MyFieldAndErrorContainer>
                                  <Field 
                                     type="text" 
                                     name="companyName" 
                                     placeholder="Company Name"
                                  />
                                  <ErrorMessage id="formik-error-message" name="companyName" component="div" />
-                              </InputAndErrorBlock>
+                              </MyFieldAndErrorContainer>
 
-                              <InputAndErrorBlock>
+                              <MyFieldAndErrorContainer>
                                  <Field 
                                     type="text" 
                                     name="contactName" 
                                     placeholder="Contact Name"
                                  />
                                  <ErrorMessage id="formik-error-message" name="contactName" component="div" />
-                              </InputAndErrorBlock>
+                              </MyFieldAndErrorContainer>
 
-                              <InputAndErrorBlock>
+                              <MyFieldAndErrorContainer>
                                  <Field 
                                     type="text" 
                                     name="phone" 
-                                    placeholder="Phone Number Ex. (124) 456-789"
+                                    placeholder="Phone Ex.(124) 456-789"
                                  />
                                  <ErrorMessage id="formik-error-message" name="phone" component="div" />
-                              </InputAndErrorBlock>
+                              </MyFieldAndErrorContainer>
 
-                              <InputAndErrorBlock>
+                              <MyFieldAndErrorContainer>
                                  <Field 
                                     type="email" 
                                     name="email" 
                                     placeholder="Email"
                                  />
                                  <ErrorMessage id="formik-error-message" name="email" component="div" />
-                              </InputAndErrorBlock>
+                              </MyFieldAndErrorContainer>
 
-                              <InputAndErrorBlock>
+                              <MyFieldAndErrorContainer>
                                  <Field 
                                     type="text" 
                                     name="address" 
                                     placeholder="Address"
                                  />
                                  <ErrorMessage id="formik-error-message" name="address" component="div" />
-                              </InputAndErrorBlock>
+                              </MyFieldAndErrorContainer>
 
-                              <InputAndErrorBlock>
+                              <MyFieldAndErrorContainer>
                                  <Field 
                                     type="text" 
                                     name="employeeCount" 
                                     placeholder="Number of Employees"
                                  />
                                  <ErrorMessage id="formik-error-message" name="employeeCount" component="div" />
-                              </InputAndErrorBlock>
+                              </MyFieldAndErrorContainer>
 
-                              <InputAndErrorBlock>
+                              <MyFieldAndErrorContainer>
                                  <Field component="select" name="assistanceSought">
-                                    <option value="" disabled selected>Select your option</option>
+                                    <option value="" disabled defaultValue>Select your option</option>
                                     <option value="requestForInitial">Request For Initial Fee On-Site Consulation</option>
                                     <option value="generalEmploymentLaw">General Employment Law Compliance Inquiry</option>
                                     <option value="employmentContractDrafting">Employment Contract-Drafting</option>
@@ -199,7 +200,7 @@ class BusinessForm extends Component {
                                     <option value="other">Other</option>
                                  </Field>
                                  <ErrorMessage id="formik-error-message" name="businessType" component="div" />
-                              </InputAndErrorBlock>
+                              </MyFieldAndErrorContainer>
                               
                               <MyFormButton type="submit" disabled={isSubmitting}>
                                  SUBMIT
