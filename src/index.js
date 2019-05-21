@@ -1,19 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
-
-
 import { PlaceholderProvider } from './context/PlaceholderContext'
 import { theme } from './theme/Theme'
 import { ThemeProvider } from 'styled-components'
 
+
 ReactDOM.render(
 <ThemeProvider theme={theme}>
-<PlaceholderProvider>
-   <App />
-</PlaceholderProvider>
+   <PlaceholderProvider>
+      <App />
+   </PlaceholderProvider>
 </ThemeProvider>
 , document.getElementById('root'))
 

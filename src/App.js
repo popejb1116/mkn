@@ -14,6 +14,7 @@ import BusinessForm from './components/content/BusinessForm'
 import EmployeeForm from './components/content/EmployeeForm'
 import Footer from './components/common/Footer'
 import styled from 'styled-components'
+import ScrollToTop from 'react-router-scroll-top'
 
 const AppWrapper = styled.div`   
    display: flex;
@@ -39,17 +40,19 @@ function App() {
 
          <Banner />
          
-         <BrowserRouter>
-            <BulmaNavbar />
-            <Route exact path="/" component={Home} />
-            <Route path="/litigation" component={Litigation} />
-            <Route path="/contracts" component={Contracts} />
-            <Route path="/hrconsulting" component={HRConsulting} />
-            <Route path="/research" component={Research} />
-            <Route path="/attorneyprofile" component={AttorneyProfile} />
-            <Route exact path="/contact-us" component={ContactUs} />
-            <Route exact path="/contact-us/business" component={BusinessForm} />
-            <Route exact path="/contact-us/employee" component={EmployeeForm} />
+         <BrowserRouter >
+            <ScrollToTop>
+               <BulmaNavbar />
+               <Route exact path="/" component={Home} />
+               <Route path="/litigation" component={Litigation} />
+               <Route path="/contracts" component={Contracts} />
+               <Route path="/hrconsulting" component={HRConsulting} />
+               <Route path="/research" component={Research} />
+               <Route path="/attorneyprofile" component={AttorneyProfile} />
+               <Route exact path="/contact-us" component={ContactUs} />
+               <Route exact path="/contact-us/business" component={BusinessForm} />
+               <Route exact path="/contact-us/employee" component={EmployeeForm} />
+            </ScrollToTop>
          </BrowserRouter>
 
          <div className="shifter">
