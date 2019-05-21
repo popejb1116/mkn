@@ -1,16 +1,16 @@
 import React from 'react'
 import { Hero, Container, Heading, Image } from 'react-bulma-components/full'
 import styled from 'styled-components'
-import { ThemeProvider } from 'styled-components'
-import { theme } from '../../theme/Theme'
 import logo from '../../images/logo-styled.png'
 
 
 //TODO: CROP LOGO IMAGE TO SQUARE, REMOVE img { padding-left: 1rem; }
 export const BannerWrapper = styled.div`
+   
    .hero{
       background-color: ${props => props.theme.primary};
       padding: 0 3rem;
+      min-height: 164px;
    }
    .hero-body{
       padding: 2rem 1.5rem;
@@ -48,14 +48,3 @@ const Banner = () => {
 }
 
 export default Banner
-
-/*
-.img{
-      align-self: center;
-   }
-   .subtitle{
-      color: white;
-      text-align: right;
-      align-self: center;
-   }   
-*/

@@ -12,7 +12,8 @@ class PlaceholderProvider extends Component {
    }
 
    handleOpacityChange = (e, imgRef) => {
-      
+      // AS EACH UNIQUE PHOTO IS LOADED IT'S PLACEHOLDER OPACITY IS PERMANENTLY SET TO 1
+      // BEING THE PHOTO IS NOW CACHED ON THE DEVICE, I THINK THAT'S WHY
       this.setState({
          [imgRef]: 0
       })

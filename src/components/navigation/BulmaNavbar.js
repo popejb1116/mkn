@@ -85,6 +85,9 @@ class BulmaNavbar extends Component {
                         <Navbar.Item renderAs="div">
                            <Link to="/attorneyprofile" id="rr-link" onClick={this.handleBurger}>Attorney Profile</Link>
                         </Navbar.Item>
+                        <Navbar.Item renderAs="div">
+                           <Link to="/contact-us" id="rr-link" onClick={this.handleBurger}>Contact Us</Link>
+                        </Navbar.Item>
                      </Navbar.Container>
          
                   </Navbar.Menu>
