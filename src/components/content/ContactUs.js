@@ -2,25 +2,8 @@ import React, {Fragment} from 'react'
 import image from '../../images/ee-law.jpg'
 import placeholder from '../../images/placeholders/ee-law_placeholder.jpg'
 import { PlaceholderContext } from '../../context/PlaceholderContext'
-import { TextInfoContext } from '../../context/TextInfoContext'
-import { Layout, Card, BlurUpContainer, PlaceholderImg, CardContent, CardTitle, CardText } from './_ContentStyledComponents'
-import styled from 'styled-components'
+import { Layout, Card, BlurUpContainer, PlaceholderImg, CardContent, CardTitle, InlineLink, CardText } from './_ContentStyledComponents'
 import { withRouter } from 'react-router-dom'
-
-const InlineLink = styled.div`
-   color: whitesmoke;
-   font-size: 1rem;
-   display: inline;
-   &:hover{
-      cursor: pointer;
-   }
-`
-
-const TextWrapper = styled.div`
-   color: whitesmoke;
-   font-size: 1rem;
-   display: inline;
-`
 
 const ContactUs = props => {
 
@@ -45,21 +28,16 @@ const ContactUs = props => {
             
             <CardContent>
                <CardTitle>Contact Us</CardTitle>
+               
+               <InlineLink 
+                  onClick={() => props.history.push("/contact-us/business")}
+               >CLICK HERE
+               </InlineLink>
+               <CardText>{text1}</CardText>
+               <br/><br/>
+               <CardText>{text2}</CardText>
+            
 
-               <TextInfoContext.Consumer>
-                  {context => (
-                     <Fragment>
-                        <InlineLink 
-                           onClick={() => props.history.push("/contact-us/business")}
-                        >CLICK HERE
-                        </InlineLink>
-                        <TextWrapper>{text1}</TextWrapper>
-                        <br/>
-                        <br/>
-                        <TextWrapper>{text2}</TextWrapper>
-                     </Fragment>
-                  )}
-               </TextInfoContext.Consumer>
             </CardContent>
 
          </Card>

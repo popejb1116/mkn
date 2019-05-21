@@ -54,8 +54,22 @@ export const CardTitle = styled.div`
 
 export const CardText = styled.p`
    color: whitesmoke;
-   text-align: left;
    font-size: 1rem;
-   line-height: 1.25rem;
-   margin-bottom: 0.5rem;
+   display: inline;
+`
+
+
+export const InlineLink = styled.div`
+   color: whitesmoke;
+   font-size: 1rem;
+   display: inline;
+   &:hover{
+      cursor: pointer;
+   }
+`
+
+export const CardText2 = styled.p`
+   color: whitesmoke;
+   font-size: 1rem;
+   display: inline;
 `
