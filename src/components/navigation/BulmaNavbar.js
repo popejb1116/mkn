@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Navbar } from 'react-bulma-components/full'
 import { Link } from 'react-router-dom'
-//import logo from '../../images/logo-styled.png'
 import styled, { ThemeProvider } from 'styled-components'
 import { theme } from '../../theme/Theme'
 

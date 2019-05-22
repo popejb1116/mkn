@@ -22,7 +22,7 @@ const MyFieldAndErrorContainer = styled.div`
    min-height: 5rem;
    width: 100%;
 
-   input, select{
+   input, select {
       background-color: transparent;
       color: whitesmoke;
       width: 90%;
@@ -32,18 +32,58 @@ const MyFieldAndErrorContainer = styled.div`
       border-radius: 4px;
       font-size: 2rem;
       outline: none;
+
+      &:focus{
+         border: solid 4px whitesmoke;
+      }
    }
-   input:focus, select:focus{
-      border: solid 3px whitesmoke;
-   }
-   input::placeholder{
-      color: whitesmoke;
-      font-size: 1rem;
-      font-style: italic;
+   
+   input {
+      &::placeholder{
+         font-size: 1rem;
+         font-style: italic;
+         color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Chrome/Opera/Safari */
+      &::-webkit-input-placeholder { 
+         color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Firefox 19+ */
+      &::-moz-placeholder { 
+         color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* IE 10+ */
+      &:-ms-input-placeholder { 
+         color: rgba(255, 255, 255, 0.6);
+      }
+
+      &:-moz-placeholder { /* Firefox 18- */
+         color: rgba(255, 255, 255, 0.6);
+      }
+
    }
 
    select{
       font-size: 1rem;
+      
+      /* Remove arrows from select */
+      /* Firefox */
+      -moz-appearance: none;
+      /* Chrome */
+      -webkit-appearance: none;
+      /* IE10 */
+      &::-ms-expand {
+         display: none;
+      }
+   }
+
+   option{
+      /* Firefox Only*/
+      background-color: whitesmoke;
+      color: ${props => props.theme.accent};
    }
 
    #formik-error-message{

@@ -16,6 +16,8 @@ import Footer from './components/common/Footer'
 import styled from 'styled-components'
 import ScrollToTop from 'react-router-scroll-top'
 
+import BrowserComparison from './components/content/BrowserComparison'
+
 const AppWrapper = styled.div`   
    display: flex;
    flex-flow: column nowrap;
@@ -52,6 +54,8 @@ function App() {
                <Route exact path="/contact-us" component={ContactUs} />
                <Route exact path="/contact-us/business" component={BusinessForm} />
                <Route exact path="/contact-us/employee" component={EmployeeForm} />
+
+               <Route exact path="/browsers" component={BrowserComparison} />
             </ScrollToTop>
          </BrowserRouter>
 
